@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmazonQ-TerraViz ⭐ - AI-Powered Terraform Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">☁️</div>
+                    <h1>AmazonQ-TerraViz ⭐</h1>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon" onclick="location.reload()" title="Refresh">🔄</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="control-section">
+                    <h3>🛠️ Services</h3>
+                    <div class="toggle-group">
+                        <label class="toggle"><input type="checkbox" id="ecr" checked><span>📦 ECR</span></label>
+                        <label class="toggle"><input type="checkbox" id="ecs" checked><span>🐳 ECS</span></label>
+                        <label class="toggle"><input type="checkbox" id="rds" checked><span>🗄️ RDS</span></label>
+                        <label class="toggle"><input type="checkbox" id="s3" checked><span>🗺 S3</span></label>
+                        <label class="toggle"><input type="checkbox" id="ec2_public" checked><span>⚡ EC2 Public</span></label>
+                        <label class="toggle"><input type="checkbox" id="ec2_private" checked><span>⚡ EC2 Private</span></label>
+                        <label class="toggle"><input type="checkbox" id="alb" checked><span>⚖️ Load Balancer</span></label>
+                    </div>
+                </div>
+                
+                <div class="control-section">
+                    <h3>🌐 Network</h3>
+                    <div class="toggle-group">
+                        <label class="toggle"><input type="checkbox" id="internet" checked><span>🌍 Internet</span></label>
+                        <label class="toggle"><input type="checkbox" id="igw" checked><span>⚡ IGW</span></label>
+                        <label class="toggle"><input type="checkbox" id="nat" checked><span>🔀 NAT</span></label>
+                        <label class="toggle"><input type="checkbox" id="public_subnets" checked><span>🟢 Public Subnets</span></label>
+                        <label class="toggle"><input type="checkbox" id="private_subnets" checked><span>🟡 Private Subnets</span></label>
+                        <label class="toggle"><input type="checkbox" id="isolated_subnets" checked><span>🔴 Isolated Subnets</span></label>
+                    </div>
+                </div>
+                
+                <div class="control-section">
+                    <h3>✨ Visual</h3>
+                    <div class="toggle-group">
+                        <label class="toggle"><input type="checkbox" id="animations" checked><span>🎨 Animations</span></label>
+                        <label class="toggle"><input type="checkbox" id="aws_branding" checked><span>🏷️ AWS Branding</span></label>
+                        <label class="toggle"><input type="checkbox" id="connections" checked><span>🔗 Connections</span></label>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn-primary" onclick="updateConfig()">⚙️ Apply</button>
+                    <button class="btn-secondary" onclick="resetConfig()">🔄 Reset</button>
+                </div>
+            </aside>
+
+            <main class="content">
+                <div class="terraform-input">
+                    <div class="input-header">
+                        <h3>📝 Terraform Code</h3>
+                        <button class="btn-generate" onclick="generateDiagram()">▶️ Generate</button>
+                    </div>
+                    <textarea id="terraformInput" placeholder="Paste your Terraform code here..."></textarea>
+                </div>
+                
+                <div id="diagram" class="diagram-area"></div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
